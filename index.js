@@ -1,11 +1,13 @@
-require('dotenv').config();
-require('./server'); // giữ online trên Replit
+import dotenv from 'dotenv';
+dotenv.config();
 
-const { Client, GatewayIntentBits } = require('discord.js');
-const cron = require('node-cron');
+import './server.js'; // giữ online trên Replit
+
+import { Client, GatewayIntentBits } from 'discord.js';
+import cron from 'node-cron';
 
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages]
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
 });
 
 function getDaysUntilExam() {
